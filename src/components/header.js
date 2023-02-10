@@ -1,9 +1,10 @@
 import Image from "next/image"
 import Link from 'next/link'
+import styles from '../styles/header.module.css'
 
 export default function Header() {
   return (
-    <header>
+    <header className={styles.header}>
       <div className="contenedor">
         <Image src="/img/logo.svg" alt="logotipo" width={300} height={40} />
         <nav>
