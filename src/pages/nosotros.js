@@ -1,10 +1,13 @@
 import Link from 'next/link'
+import Layout from '@/components/layout'
 
 export default function Nosotros() {
   return (
     <>
-      <div>Nosotros</div>
-      <Link href="/">Inicio</Link>
+      <Layout>
+        <div>Nosotros</div>
+        <Link href="/">Inicio</Link>
+      </Layout>
     </>
   )
 }
