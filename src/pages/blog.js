@@ -1,13 +1,13 @@
 import Layout from '@/components/layout'
 
-export default function Home() {
+export default function Blog() {
   return (
     <>
       <Layout
-        title={'Inicio'}
+        title={'Blog'}
         description={'Blog de musica, venta de guitarras y mas.'}
       >
-        <h1>Hola Mundo</h1>
+        <div>Blog</div>
       </Layout>
     </>
   )
