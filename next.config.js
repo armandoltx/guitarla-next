@@ -2,7 +2,8 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    formats: ['image/avif', 'image/avif']
+    formats: ['image/avif', 'image/avif'],
+    domains: ['res.cloudinary.com']
   }
 }
 

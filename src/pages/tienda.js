@@ -1,5 +1,5 @@
 import Layout from '@/components/layout'
-import ListadoGuitarras from '@/components/listado-guitarras'
+import Guitarra from '@/components/guitarra'
 
 export default function Tienda({guitarras}) {
   console.log(guitarras)
@@ -27,7 +27,10 @@ export default function Tienda({guitarras}) {
 
 // esta es parte del servidor
 
-export async function getStaticProps() {
+// getStaticProps es estatico, asi q cuando se hace el build no guarda todos los datos de la api, si hay algun cambio
+// los datos en la API no se reflejaran hasta q no se haga otro build.
+
+{/* export async function getStaticProps() {
   const respuesta = await fetch(`${process.env.API_URL}/guitarras?populate=imagen`)
   const {data: guitarras} = await respuesta.json()
   return {
@@ -35,7 +38,16 @@ export async function getStaticProps() {
       guitarras
     }
   }
-}
+} */}
 
-// getStaticProps es estatico, asi q cuando se hace el build no guarda todos los datos de la api, si hay algun cambio
-// los datos en la API no se reflejaran hasta q no se haga otro build.
+// getStaticProps es del servidor.
+
+export async function getServerSideProps() {
+  const respuesta = await fetch(`${process.env.API_URL}/guitarras?populate=imagen`)
+  const {data: guitarras} = await respuesta.json()
+  return {
+    props: {
+      guitarras
+      }
+    }
+}
