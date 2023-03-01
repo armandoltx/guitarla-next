@@ -25,7 +25,7 @@ export default function Producto({guitarra}) {
 }
 
 // para hacer la consulta de una forma estatica se necesitan las 2 funciones getStaticPaths y getStaticProps
-export async funtion getStaticPaths() {
+export async function getStaticPaths() {
   // se usa para los paths para las paginas q vamos a generar
   const respuesta = await fecth(`${process.env.API_URL}/guitarras`)
   const { data } =await respuesta.json()
